@@ -135,6 +135,9 @@
 #define WFM_LABEL_AFTER 2
 #define WFM_NO_LABEL 0
 #define WFM_LABEL_DEFAULT 1
+#define Red_UI_LED 23
+#define Green_UI_LED 22
+#define Blue_UI_LED 21
 
 class WiFiManagerParameter {
   public:

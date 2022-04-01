@@ -743,6 +743,19 @@ boolean  WiFiManager::startConfigPortal(char const *apName, char const *apPasswo
 
   while(1){
 
+    if (WiFi_softap_num_stations()>0){
+      digitalWrite(Red_UI_LED, HIGH);
+      digitalWrite(Green_UI_LED, HIGH);
+      digitalWrite(Blue_UI_LED, LOW);
+    } else {
+      digitalWrite(Red_UI_LED, HIGH);
+      digitalWrite(Green_UI_LED, HIGH);
+      digitalWrite(Blue_UI_LED, HIGH);
+      vTaskDelay(1000);
+      digitalWrite(Blue_UI_LED, LOW);
+      vTaskDelay(1000);
+    }
+
     // if timed out or abort, break
     if(configPortalHasTimeout() || abort){
       #ifdef WM_DEBUG_LEVEL
