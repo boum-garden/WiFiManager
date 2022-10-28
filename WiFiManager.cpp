@@ -2258,6 +2258,8 @@ void WiFiManager::handleReset() {
   #ifdef WM_DEBUG_LEVEL
   DEBUG_WM(F("RESETTING ESP"));
   #endif
+
+  resetSettings(); // RESET SETTING when restart
   delay(1000);
   reboot();
 }
